@@ -1,0 +1,9 @@
+
+Jenkins
+
+This folder contains all the (additional) stuff required by Jenkins (CI Build Services at Apache) to build Pivot.
+This folder must be added to Jenkins as Source checkout, like what is done for trunk.
+
+Note that during a Jenkins build, the environment variable jenkins.job is defined, 
+so for example inside the same build files it's possible to have a different flow between standard (manual) builds, 
+and automated builds by Jenkins.
