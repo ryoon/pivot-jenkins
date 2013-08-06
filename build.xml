@@ -70,13 +70,13 @@ limitations under the License.
             <fail>
                 <condition>
                     <not>
-                        <antversion atleast="1.7.0"/>
+                        <antversion atleast="1.8.0"/>
                     </not>
                 </condition>
                 <![CDATA[
                 Error:
 
-                Building Pivot requires Apache Ant 1.7 or greater. Please see the BUILD
+                Building Pivot requires Apache Ant 1.8 or greater. Please see the BUILD
                 file for more information.
                 ]]>
             </fail>
@@ -88,7 +88,6 @@ limitations under the License.
                 <condition>
                     <not>
                         <or>
-                            <equals arg1="${ant.java.version}" arg2="1.6"/>
                             <equals arg1="${ant.java.version}" arg2="1.7"/>
                         </or>
                     </not>
@@ -96,7 +95,7 @@ limitations under the License.
                 <![CDATA[
                 Error:
 
-                Building Pivot requires JDK 1.6 or greater. Please see the
+                Building Pivot requires JDK 1.7 or greater. Please see the
                 BUILD file for more information.
                 ]]>
             </fail>
