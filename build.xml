@@ -19,6 +19,9 @@ limitations under the License.
 <project name="pivot_build_by_jenkins" default="check" basedir="./pivot_trunk"
     xmlns:artifact="antlib:org.apache.maven.artifact.ant"
 >
+    <!-- Dynamic properties -->
+    <property file="build.properties"/>
+
     <!-- Classpath-related properties -->
     <property environment="env"/>
     <path id="classpath.env">
@@ -29,17 +32,15 @@ limitations under the License.
     </path>
     <property name="classpath_env" refid="classpath.env"/>
     <property name="classpath_javalib" refid="classpath.javalib"/>
+
+    <!-- Import Pivot build file -->
+    <import file="./pivot_trunk/build.xml"/>
+
     <path id="classpath.general">
         <fileset dir="../ci-builds-on-jenkins/lib" includes="**/*.jar"/>
         <pathelement path="${classpath_env}/"/>
         <pathelement path="${classpath_javalib}"/>
     </path>
-
-    <!-- Dynamic properties -->
-    <property file="build.properties"/>
-
-    <!-- Import Pivot build file -->
-    <import file="./pivot_trunk/build.xml"/>
 
     <!-- Set version from jenkins or not -->
     <condition property="version" value="${base.version}-${jenkins.build}">
