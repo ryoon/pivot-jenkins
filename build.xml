@@ -37,8 +37,7 @@ limitations under the License.
     <import file="./pivot_trunk/build.xml"/>
 
     <path id="classpath.general">
-        <fileset dir="ci-builds-on-jenkins/lib" includes="**/*.jar"/>
-        <pathelement path="${classpath_env}/"/>
+        <fileset dir="../ci-builds-on-jenkins/lib" includes="**/*.jar"/>
         <pathelement path="${classpath_javalib}"/>
     </path>
 
