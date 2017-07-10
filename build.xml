@@ -61,6 +61,8 @@ limitations under the License.
     <target name="check" description="Check environment" depends="help">
 
         <sequential>
+            <echo message="Using CLASSPATH=${classpath.general}"/>
+
             <!-- Ant version check -->
             <fail>
                 <condition>
@@ -75,9 +77,7 @@ limitations under the License.
                 file for more information.
                 ]]>
             </fail>
-        </sequential>
 
-        <sequential>
             <!-- JDK version check -->
             <fail>
                 <condition>
@@ -101,12 +101,8 @@ limitations under the License.
                 <condition>
                     <not>
                         <and>
-                            <available classname="org.junit.Test">
-                                <classpath refid="classpath.general" />
-                            </available>
-                            <hasmethod classname="org.junit.Assert" method="assertNotEquals">
-                                <classpath refid="classpath.general" />
-                            </hasmethod>
+                            <available classname="org.junit.Test" classpathref="classpath.general" />
+                            <hasmethod classname="org.junit.Assert" method="assertNotEquals" classpathref="classpath.general" />
                         </and>
                     </not>
                 </condition>
