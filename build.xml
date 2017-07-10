@@ -21,6 +21,7 @@ limitations under the License.
 >
     <!-- Dynamic properties -->
     <property file="build.properties"/>
+    <property name="running.on.jenkins" value="true"/>
 
     <!-- Classpath-related properties -->
     <property environment="env"/>
@@ -53,7 +54,7 @@ limitations under the License.
 
     <!-- Help -->
     <target name="help" description="Put some help to console" depends="">
-        <echo message="Jenkins.job=${jenkins.job}"/>
+        <echo message="Running on Jenkins? ${running.on.jenkins}"/>
         <property name="classpath" refid="classpath.general"/>
         <echo message="Using Classpath: ${classpath}"/>
     </target>
