@@ -101,8 +101,8 @@ limitations under the License.
                 <condition>
                     <not>
                         <and>
-                            <available classname="org.junit.Test" classpath="${classpath}" />
-                            <hasmethod classname="org.junit.Assert" method="assertNotEquals" classpath="${classpath}" />
+                            <available classname="org.junit.Test" ignoreSystemClasses="true" classpath="${classpath}" />
+                            <hasmethod classname="org.junit.Assert" method="assertNotEquals" ignoreSystemClasses="true" classpath="${classpath}" />
                         </and>
                     </not>
                 </condition>
